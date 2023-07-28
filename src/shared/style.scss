@@ -20,9 +20,13 @@ body {
   font-size: 16px;
 }
 
-#root{
+#root {
   margin: 0 auto;
   position: relative;
   background-image: url("../images/background.png");
+  background-size: cover;
+}
+.App {
+  height: 100%;
 }
 
