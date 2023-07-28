@@ -7,9 +7,9 @@ import {px} from '../shared/px';
 export const Chart6 = () => {
   const divRef = useRef(null);
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
-    const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
+    const myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
+      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       legend: {
         bottom: 0,
         textStyle: {color: 'white'},
@@ -17,7 +17,6 @@ export const Chart6 = () => {
         itemHeight: px(6),
         itemGap: px(5)
       },
-      color: colors,
       xAxis: {show: false},
       yAxis: {show: false},
       series: [
@@ -52,8 +51,8 @@ export const Chart6 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="日常防火巡查记录"></Title>
-      <div ref={divRef} className="chart"></div>
+      <Title title="日常防火巡查记录"/>
+      <div ref={divRef} className="chart"/>
     </div>
   );
 };

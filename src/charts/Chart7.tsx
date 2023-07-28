@@ -14,8 +14,9 @@ export const Chart7 = () => {
     {value: 0.22, name: '小经营场所'},
   ];
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
+    const myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
+      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059'],
       xAxis: {show: false},
       yAxis: {show: false},
       grid: {x: 0, x2: 0, y: 0, y2: 0, containLabel: true},
@@ -53,8 +54,8 @@ export const Chart7 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="火灾场所统计"></Title>
-      <div ref={divRef} className="chart"></div>
+      <Title title="火灾场所统计"/>
+      <div ref={divRef} className="chart"/>
     </div>
   );
 };

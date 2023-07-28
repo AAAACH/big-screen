@@ -6,8 +6,9 @@ import {createEchartsOptions} from '../shared/createEchartsOptions';
 export const Chart1 = () => {
   const divRef = useRef(null);
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
+    const myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
+      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {
         data: ['A类火灾', 'B类火灾', 'C类火灾', 'D类火灾', 'E类火灾', 'F类火灾'],
         axisTick: {show: false},
@@ -35,14 +36,14 @@ export const Chart1 = () => {
       },
       series: [{
         type: 'bar',
-        data: [10, 20, 36, 41, 15, 26, 37, 18, 29]
+        data: [27, 20, 36, 25, 15, 26]
       }]
     }));
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="火灾类型统计"></Title>
-      <div ref={divRef} className="chart"></div>
+      <Title title="火灾类型统计"/>
+      <div ref={divRef} className="chart"/>
     </div>
   );
 };

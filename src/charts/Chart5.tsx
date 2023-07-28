@@ -6,10 +6,10 @@ import {px} from '../shared/px';
 
 export const Chart5 = () => {
   const divRef = useRef(null);
-  const colors = ['#856BED', '#F46064', '#F38E1C', '#1CDB7C', '#33A4FA'];
   useEffect(() => {
-    var myChart = echarts.init(divRef.current);
+    const myChart = echarts.init(divRef.current);
     myChart.setOption(createEchartsOptions({
+      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       legend: {
         left: px(12),
         top: px(4),
@@ -19,7 +19,6 @@ export const Chart5 = () => {
         itemHeight: px(6),
         itemGap: px(9)
       },
-      color: colors,
       xAxis: {show: false},
       yAxis: {show: false},
       series: [
@@ -53,8 +52,8 @@ export const Chart5 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="消防工作者统计"></Title>
-      <div ref={divRef} className="chart"></div>
+      <Title title="消防工作者统计"/>
+      <div ref={divRef} className="chart"/>
     </div>
   );
 };

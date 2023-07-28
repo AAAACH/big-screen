@@ -20,28 +20,21 @@
       margin-top: px(15);
       display: grid;
       grid-template:
-        ". box1 . box2 . box3" 1fr / 14fr 168fr 28fr 302fr 28fr 168fr 14fr;
+        ". box1 . box2 . box3" 1fr / 14fr 168fr 20fr 318fr 20fr 168fr 14fr;
       
       .section1 {
         grid-area: box1;
-        > .chartWrapper {
-          height: px(98);
-          display: flex;
-          flex-direction: column;
-          margin-bottom: px(20);
-          > .chart {
-            flex: 1;
-          }
-        }
       }
       .section2 {
         grid-area: box2;
-        .chart {
+        > .chart {
           height: 100%;
         }
       }
       .section3 {
         grid-area: box3;
+      }
+      .section1, .section3 {
         > .chartWrapper {
           height: px(98);
           display: flex;
