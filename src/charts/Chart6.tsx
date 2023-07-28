@@ -4,48 +4,47 @@ import {Title} from '../shared/Title';
 import {createEchartsOptions} from '../shared/createEchartsOptions';
 import {px} from '../shared/px';
 
-export const Chart5 = () => {
+export const Chart6 = () => {
   const divRef = useRef(null);
-  const colors = ['#856BED', '#F46064', '#F38E1C', '#1CDB7C', '#33A4FA'];
   useEffect(() => {
     var myChart = echarts.init(divRef.current);
+    const colors = ['#F46064', '#F38E1C', '#1CDB7C', '#8D70F8', '#33A4FA'];
     myChart.setOption(createEchartsOptions({
       legend: {
-        left: px(12),
-        top: px(4),
-        orient: 'vertical',
+        bottom: 0,
         textStyle: {color: 'white'},
         itemWidth: px(6),
         itemHeight: px(6),
-        itemGap: px(9)
+        itemGap: px(5)
       },
       color: colors,
       xAxis: {show: false},
       yAxis: {show: false},
       series: [
         {
-          left: px(30),
-          top: px(4),
+          bottom: px(15),
+          startAngle: -20,
           type: 'pie',
-          radius: ['75%', '90%'],
+          radius: ['25%', '90%'],
           avoidLabelOverlap: false,
           label: {
-            show: true, position: 'inside', textStyle: {color: 'white', fontSize: px(7)},
+            show: true, position: 'outside', textStyle: {color: 'white', fontSize: px(7)},
+            distanceToLabelLine: 0,
             formatter(options) {
-              return (options.value * 100).toFixed(0) + '%';
+              return options.value * 100 + '%';
             }
           },
-          labelLine: {show: false},
+          labelLine: {show: true, length: 0},
+          roseType: 'area',
           itemStyle: {
-            borderColor: '#0F113A',
-            borderWidth: px(2)
+            shadowBlur: px(200),
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
           },
           data: [
-            {value: 0.07, name: '安全监控'},
-            {value: 0.10, name: '设施维护'},
-            {value: 0.23, name: '消防工程'},
-            {value: 0.28, name: '应急救援'},
-            {value: 0.32, name: '设施操作'},
+            {value: 0.30, name: '出警'},
+            {value: 0.36, name: '巡查'},
+            {value: 0.24, name: '排障'},
+            {value: 0.10, name: '演习'},
           ]
         }
       ]
@@ -53,7 +52,7 @@ export const Chart5 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="消防工作者统计"></Title>
+      <Title title="日常防火巡查记录"></Title>
       <div ref={divRef} className="chart"></div>
     </div>
   );
