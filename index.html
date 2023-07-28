@@ -8,7 +8,7 @@
   <script>
     const {clientWidth} = document.documentElement
     const {clientHeight} = document.documentElement
-    const pageWidth = (clientWidth / clientHeight) > (16 / 9) ? clientHeight * (16 / 9) : clientWidth
+    window.pageWidth = clientWidth / clientHeight > 16 / 9 ? clientHeight * (16 / 9) : clientWidth
     const pageHeight = pageWidth / (16 / 9)
     document.write(`
       <style>
