@@ -12,14 +12,14 @@ export const Chart2 = () => {
       legend: {
         bottom: px(0),
         textStyle: {color: 'white'},
-        itemWidth: px(10),
-        itemHeight: px(10)
+        itemWidth: px(6),
+        itemHeight: px(6)
       },
       grid: {
         x: px(0),
         x2: px(15),
         y: px(10),
-        y2: px(20),
+        y2: px(14),
         containLabel: true
       },
       xAxis: {
@@ -63,8 +63,8 @@ export const Chart2 = () => {
       ].map(obj => ({
         ...obj,
         symbol: 'circle',
-        symbolSize: px(12),
-        lineStyle: {width: px(2)}
+        symbolSize: px(5),
+        lineStyle: {width: px(1)}
       }))
     }));
   }, []);

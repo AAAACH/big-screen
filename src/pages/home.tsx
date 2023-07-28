@@ -14,15 +14,15 @@ export const Home = () => {
       <main>
         <section className="section1">
           <Chart1/>
-          <Chart2/>
-          <Chart3/>          
+          <Chart5/>
+          <Chart2/>         
         </section>
         <section className="section2">
           <Chart4/>
         </section>
         <section className="section3">
-          <Chart5/>
           <Chart6/>
+          <Chart3/>
         </section>
       </main>
     </div>
