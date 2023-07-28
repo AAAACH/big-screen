@@ -24,7 +24,7 @@
       
       .section1 {
         grid-area: box1;
-        .chartWrapper {
+        > .chartWrapper {
           height: px(98);
           display: flex;
           flex-direction: column;
@@ -42,7 +42,7 @@
       }
       .section3 {
         grid-area: box3;
-        .chartWrapper {
+        > .chartWrapper {
           height: px(98);
           display: flex;
           flex-direction: column;
