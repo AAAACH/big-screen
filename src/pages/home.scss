@@ -36,6 +36,9 @@
       }
       .section2 {
         grid-area: box2;
+        .chart {
+          height: 100%;
+        }
       }
       .section3 {
         grid-area: box3;
