@@ -72,7 +72,7 @@ export const Chart7 = () => {
     render(data[1]);
     setInterval(() => {
       render(data[Math.ceil(Math.random() * 3)]);
-    }, 2000);
+    }, 1500);
   }, []);
   return (
     <div className="chartWrapper">
