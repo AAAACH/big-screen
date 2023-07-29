@@ -11,13 +11,16 @@ export const Chart4 = () => {
     // @ts-ignore
     echarts.registerMap('CN', china);
     myChart.setOption(createEchartsOptions({
-      color: ['#4ba2a7', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
+      color: ['#97cbce', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {show: false},
       yAxis: {show: false},
       series: [
         {
           type: 'map',
           mapType: 'CN',
+          data: [
+            {name: '江苏省', value: 1},
+          ],
           label: {show: false, color: 'white'},
           itemStyle: {
             areaColor: 'rgba(56, 105, 112, 0.5)',

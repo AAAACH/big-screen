@@ -9,6 +9,7 @@ import {Chart6} from '../components/Chart6';
 import {Chart7} from '../components/Chart7';
 import {Form} from '../components/Form';
 import {Clock} from '../components/Clock';
+import {Icon} from '../components/Icon';
 
 export const Home = () => {
   return (
@@ -16,6 +17,10 @@ export const Home = () => {
       <header>
         <Clock/>
         <span>消防隐患实时监控大屏</span>
+        <div className="info">
+          <Icon name="position"/> Nanjing
+          <Icon name="weather"/> 26℃ cloudy
+        </div>
       </header>
       <main>
         <section className="section1">
@@ -33,6 +38,7 @@ export const Home = () => {
           <Chart7/>
         </section>
       </main>
+      <p className="foot">© XF 2022-2023</p>
     </div>
   );
 };

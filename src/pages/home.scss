@@ -32,7 +32,7 @@
       .clock {
         position: absolute;
         left: px(14);
-        color: #376c78;
+        color: #6d929d;
         > div {
           &:first-child {
             font-size: px(9);
@@ -40,6 +40,20 @@
           }
           &:nth-child(2) {
             font-size: px(5)
+          }
+        }
+      }
+      .info {
+        position: absolute;
+        right: 0;
+        font-size: px(9);
+        color: #6d929d;
+        padding: 0 px(13);
+        .icon {
+          fill: #6d929d;
+          &:last-child {
+            margin-left: px(7);
+            transform: scale(1.25);
           }
         }
       }
@@ -136,5 +150,12 @@
           }
         }
       }
+    }
+    > p {
+      font-size: px(7);
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
     }
   }
