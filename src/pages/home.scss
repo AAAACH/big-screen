@@ -19,6 +19,7 @@
       font-size: px(15);
       background: linear-gradient(90deg, rgba(8, 24, 35, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(8, 24, 35, 1) 100%);
       position: relative;
+      text-shadow: 0 0 10px #1d393d, 0 0 20px #1d393d, 0 0 30px #1d393d, 0 0 40px #1d393d;
       &::before {
         content: '';
         position: absolute;
@@ -26,7 +27,21 @@
         bottom: 0;
         left: 0;
         right: 0;
-          background: linear-gradient(90deg, rgba(16, 48, 65, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(16, 48, 65, 1) 100%);
+        background: linear-gradient(90deg, rgba(16, 48, 65, 1) 0%, rgba(0, 0, 0, 0) 50%, rgba(16, 48, 65, 1) 100%);
+      }
+      .clock {
+        position: absolute;
+        left: px(14);
+        color: #376c78;
+        > div {
+          &:first-child {
+            font-size: px(9);
+            margin-bottom: px(1);
+          }
+          &:nth-child(2) {
+            font-size: px(5)
+          }
+        }
       }
     }
     main {
@@ -66,9 +81,14 @@
         > .chart {
           height: px(240);
         }
+        > p {
+          font-size: px(6);
+          color: #eee;
+          text-align: end;
+        }
         > .formWrapper {
           display: flex;
-          justify-content: space-between;
+          justify-content: space-around;
           div {
             margin-top: px(15);
             width: px(90);

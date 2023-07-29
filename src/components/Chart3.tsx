@@ -13,13 +13,13 @@ export const Chart3 = () => {
         type: 'category',
         boundaryGap: false,
         data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
-        splitLine: {show: true, lineStyle: {color: '#073E78'}},
+        splitLine: {show: true, lineStyle: {color: '#1e393d'}},
         axisTick: {show: false},
         axisLine: {show: false},
       },
       yAxis: {
         type: 'value',
-        splitLine: {lineStyle: {color: '#073E78'}},
+        splitLine: {lineStyle: {color: '#1e393d'}},
         axisLabel: {
           formatter(val) {
             return val * 100 + '%';

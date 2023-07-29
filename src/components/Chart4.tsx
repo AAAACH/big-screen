@@ -11,7 +11,7 @@ export const Chart4 = () => {
     // @ts-ignore
     echarts.registerMap('CN', china);
     myChart.setOption(createEchartsOptions({
-      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
+      color: ['#4ba2a7', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {show: false},
       yAxis: {show: false},
       series: [
@@ -32,6 +32,9 @@ export const Chart4 = () => {
     }));
   }, []);
   return (
-    <div ref={divRef} className="chart"/>
+    <>
+      <div ref={divRef} className="chart"/>
+      <p>该地图仅显示中国部分地区</p>
+    </>
   );
 };

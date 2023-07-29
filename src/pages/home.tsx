@@ -8,11 +8,13 @@ import {Chart5} from '../components/Chart5';
 import {Chart6} from '../components/Chart6';
 import {Chart7} from '../components/Chart7';
 import {Form} from '../components/Form';
+import {Clock} from '../components/Clock';
 
 export const Home = () => {
   return (
     <div className="home">
       <header>
+        <Clock/>
         <span>消防隐患实时监控大屏</span>
       </header>
       <main>

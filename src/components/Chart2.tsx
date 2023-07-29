@@ -26,13 +26,13 @@ export const Chart2 = () => {
         type: 'category',
         boundaryGap: false,
         data: [2016, 2017, 2018, 2019, 2020, 2021, 2022],
-        splitLine: {show: true, lineStyle: {color: '#073E78'}},
+        splitLine: {show: true, lineStyle: {color: '#1e393d'}},
         axisTick: {show: false},
         axisLine: {show: false},
       },
       yAxis: {
         type: 'value',
-        splitLine: {lineStyle: {color: '#073E78'}},
+        splitLine: {lineStyle: {color: '#1e393d'}},
         axisLabel: {
           formatter(val) {
             return val * 100 + '%';
@@ -43,27 +43,27 @@ export const Chart2 = () => {
         {
           name: '北京',
           type: 'line',
-          data: [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07].reverse()
+          data: [0.01, 0.02, 0.03, 0.04, 0.03, 0.05, 0.07]
         },
         {
           name: '上海',
           type: 'line',
-          data: [0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08].reverse()
+          data: [0.04, 0.03, 0.06, 0.06, 0.04, 0.03, 0.05]
         },
         {
           name: '天津',
           type: 'line',
-          data: [0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09].reverse()
+          data: [0.01, 0.02, 0.03, 0.05, 0.04, 0.06, 0.08]
         },
         {
           name: '重庆',
           type: 'line',
-          data: [0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0.10].reverse()
+          data: [0.01, 0.02, 0.04, 0.05, 0.07, 0.06, 0.09]
         }
       ].map(obj => ({
         ...obj,
         symbol: 'circle',
-        symbolSize: px(5),
+        symbolSize: px(4),
         lineStyle: {width: px(1)}
       }))
     }));
