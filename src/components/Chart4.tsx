@@ -20,7 +20,7 @@ export const Chart4 = () => {
           mapType: 'CN',
           label: {show: false, color: 'white'},
           itemStyle: {
-            areaColor: 'rgba(56, 105, 112, 0.6)',
+            areaColor: 'rgba(56, 105, 112, 0.5)',
             borderColor: '#376c78',
             emphasis: {
               label: {color: 'white'},
