@@ -40,7 +40,7 @@ export const Chart3 = () => {
         areaStyle: {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
             offset: 0,
-            color: '#414a9f'
+            color: '#3559a7'
           }, {
             offset: 1,
             color: '#1b1d52'

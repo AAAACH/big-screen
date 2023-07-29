@@ -9,6 +9,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px 1px #103852;
     header {
       height: px(30);
       display: flex;
@@ -24,14 +25,27 @@
       grid-template:
         ". box1 . box2 . box3" 1fr / 14fr 168fr 20fr 318fr 20fr 168fr 14fr;
       .title {
-        border: 1px solid #103852;
+        border: 1px solid #165374;
         color: #ddd;
-        background: #081823;
+        background: rgba(31, 59, 70, 0.35);
         height: px(15);
         font-size: px(8);
         padding-left: px(6);
         display: flex;
         align-items: center;
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          box-shadow: 4px 0 0 -3px #103852,
+          -4px 0 0 -3px #103852,
+          0 4px 0 -3px #103852,
+          0 -4px 0 -3px #103852,;
+        }
       }
       .section1 {
         grid-area: box1;
@@ -39,7 +53,42 @@
       .section2 {
         grid-area: box2;
         > .chart {
-          height: 100%;
+          height: px(240);
+        }
+        > .formWrapper {
+          display: flex;
+          justify-content: space-between;
+          div {
+            margin-top: px(15);
+            width: px(90);
+            height: px(46);
+            border: 1px solid #165374;
+            background: rgba(31, 59, 70, 0.35);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            font-size: px(6);
+            color: #aaa;
+            position: relative;
+            p {
+              margin-bottom: px(2);
+              font-size: px(15);
+              color: #eee;
+            }
+            &::before {
+              content: '';
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              box-shadow: 7px 0 0 -6px #103852,
+              -7px 0 0 -6px #103852,
+              0 7px 0 -6px #103852,
+              0 -7px 0 -6px #103852,;
+            }
+          }
         }
       }
       .section3 {
