@@ -5,16 +5,32 @@ import {px} from '../shared/px';
 
 export const Chart7 = () => {
   const divRef = useRef(null);
-  const data = [
-    {value: 0.12, name: '农村地区'},
-    {value: 0.16, name: '自建住宅'},
-    {value: 0.24, name: '高层建筑'},
-    {value: 0.26, name: '厂房仓储'},
-    {value: 0.22, name: '小经营场所'},
-  ];
-  useEffect(() => {
-    const myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+  const myChart = useRef(null);
+  const data = {
+    1: [
+      {value: 0.12, name: '农村地区'},
+      {value: 0.16, name: '自建住宅'},
+      {value: 0.24, name: '高层建筑'},
+      {value: 0.26, name: '厂房仓储'},
+      {value: 0.22, name: '小经营场所'},
+    ],
+    2: [
+      {value: 0.22, name: '农村地区'},
+      {value: 0.24, name: '自建住宅'},
+      {value: 0.16, name: '高层建筑'},
+      {value: 0.12, name: '厂房仓储'},
+      {value: 0.26, name: '小经营场所'},
+    ],
+    3: [
+      {value: 0.16, name: '农村地区'},
+      {value: 0.22, name: '自建住宅'},
+      {value: 0.26, name: '高层建筑'},
+      {value: 0.24, name: '厂房仓储'},
+      {value: 0.12, name: '小经营场所'},
+    ]
+  };
+  const render = data => {
+    myChart.current.setOption(createEchartsOptions({  
       color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059'],
       xAxis: {show: false},
       yAxis: {show: false},
@@ -50,6 +66,13 @@ export const Chart7 = () => {
         }
       ]
     }));
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    render(data[1]);
+    setInterval(() => {
+      render(data[Math.ceil(Math.random() * 3)]);
+    }, 2000);
   }, []);
   return (
     <div className="chartWrapper">

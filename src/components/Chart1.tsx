@@ -4,9 +4,14 @@ import {createEchartsOptions} from '../shared/createEchartsOptions';
 
 export const Chart1 = () => {
   const divRef = useRef(null);
-  useEffect(() => {
-    const myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+  const myChart = useRef(null);
+  const data = {
+    1: [20, 15, 25, 10, 15, 10],
+    2: [25, 10, 15, 20, 10, 15],
+    3: [15, 20, 10, 15, 25, 10]
+  };
+  const render = data => {
+    myChart.current.setOption(createEchartsOptions({
       color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {
         data: ['A类火灾', 'B类火灾', 'C类火灾', 'D类火灾', 'E类火灾', 'F类火灾'],
@@ -35,10 +40,18 @@ export const Chart1 = () => {
       },
       series: [{
         type: 'bar',
-        data: [27, 20, 36, 25, 15, 26]
+        data: data
       }]
     }));
+  };
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    render(data[1]);
+    setInterval(() => {
+      render(data[Math.ceil(Math.random() * 3)]);
+    }, 2000);
   }, []);
+  
   return (
     <div className="chartWrapper">
       <div className="title">火灾类型统计</div>

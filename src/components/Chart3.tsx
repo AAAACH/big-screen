@@ -5,9 +5,29 @@ import {px} from '../shared/px';
 
 export const Chart3 = () => {
   const divRef = useRef(null);
-  useEffect(() => {
-    const myChart = echarts.init(divRef.current);
-    myChart.setOption(createEchartsOptions({
+  const myChart = useRef(null);
+  const data = {
+    1: [
+      0.15, 0.13, 0.11,
+      0.13, 0.14, 0.15,
+      0.16, 0.18, 0.21,
+      0.19, 0.17, 0.16
+    ],
+    2: [
+      0.11, 0.15, 0.16,
+      0.22, 0.19, 0.17,
+      0.16, 0.14, 0.18,
+      0.17, 0.20, 0.17
+    ],
+    3: [
+      0.13, 0.14, 0.17,
+      0.20, 0.17, 0.21,
+      0.19, 0.16, 0.15,
+      0.13, 0.15, 0.17
+    ]
+  };
+  const render = data => {
+    myChart.current.setOption(createEchartsOptions({
       color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
       xAxis: {
         type: 'category',
@@ -28,12 +48,7 @@ export const Chart3 = () => {
       },
       series: [{
         type: 'line',
-        data: [
-          0.15, 0.13, 0.11,
-          0.13, 0.14, 0.15,
-          0.16, 0.18, 0.21,
-          0.19, 0.17, 0.16
-        ],
+        data: data,
         symbol: 'circle',
         symbolSize: px(4),
         lineStyle: {width: px(1)},
@@ -48,7 +63,16 @@ export const Chart3 = () => {
         }
       }]
     }));
+  };
+
+  useEffect(() => {
+    myChart.current = echarts.init(divRef.current);
+    render(data[1]);
+    setInterval(() => {
+      render(data[Math.ceil(Math.random() * 3)]);
+    }, 2000);
   }, []);
+  
   return (
     <div className="chartWrapper">
       <div className="title">重点单位巡查情况</div>
