@@ -7,7 +7,7 @@ import {Chart4} from '../components/Chart4';
 import {Chart5} from '../components/Chart5';
 import {Chart6} from '../components/Chart6';
 import {Chart7} from '../components/Chart7';
-import {Form} from '../components/Form';
+import {Statistic} from '../components/Statistic';
 import {Clock} from '../components/Clock';
 import {Icon} from '../components/Icon';
 
@@ -29,7 +29,7 @@ export const Home = () => {
           <Chart2/>         
         </section>
         <section className="section2">
-          <Form/>
+          <Statistic/>
           <Chart4/>
         </section>
         <section className="section3">
