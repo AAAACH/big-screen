@@ -14,6 +14,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      color: #eee;
+      font-size: px(16)
     }
     main {
       height: px(361);
@@ -21,7 +23,16 @@
       display: grid;
       grid-template:
         ". box1 . box2 . box3" 1fr / 14fr 168fr 20fr 318fr 20fr 168fr 14fr;
-      
+      .title {
+        border: 1px solid #103852;
+        color: #ddd;
+        background: #081823;
+        height: px(15);
+        font-size: px(8);
+        padding-left: px(6);
+        display: flex;
+        align-items: center;
+      }
       .section1 {
         grid-area: box1;
       }

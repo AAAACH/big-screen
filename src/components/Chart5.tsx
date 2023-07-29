@@ -1,6 +1,5 @@
 import React, {useEffect, useRef} from 'react';
 import * as echarts from 'echarts';
-import {Title} from '../shared/Title';
 import {createEchartsOptions} from '../shared/createEchartsOptions';
 import {px} from '../shared/px';
 
@@ -52,7 +51,7 @@ export const Chart5 = () => {
   }, []);
   return (
     <div className="chartWrapper">
-      <Title title="消防工作者统计"/>
+      <div className="title">消防工作者统计</div>
       <div ref={divRef} className="chart"/>
     </div>
   );
