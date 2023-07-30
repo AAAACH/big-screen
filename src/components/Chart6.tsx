@@ -48,6 +48,7 @@ export const Chart6 = () => {
       ]
     }));
   }, []);
+  
   return (
     <div className="chartWrapper">
       <div className="title">日常防火巡查记录</div>

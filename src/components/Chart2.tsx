@@ -68,6 +68,7 @@ export const Chart2 = () => {
       }))
     }));
   }, []);
+  
   return (
     <div className="chartWrapper">
       <div className="title">消防出警统计</div>

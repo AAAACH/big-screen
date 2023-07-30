@@ -28,11 +28,11 @@ export const Chart3 = () => {
   };
   const render = data => {
     myChart.current.setOption(createEchartsOptions({
-      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
+      color: ['#3559a7'],
       xAxis: {
         type: 'category',
         boundaryGap: false,
-        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+        data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
         splitLine: {show: true, lineStyle: {color: '#1e393d'}},
         axisTick: {show: false},
         axisLine: {show: false},
@@ -64,7 +64,6 @@ export const Chart3 = () => {
       }]
     }));
   };
-
   useEffect(() => {
     myChart.current = echarts.init(divRef.current);
     render(data[1]);
@@ -75,7 +74,7 @@ export const Chart3 = () => {
   
   return (
     <div className="chartWrapper">
-      <div className="title">重点单位巡查情况</div>
+      <div className="title">重点单位每月巡查</div>
       <div ref={divRef} className="chart"/>
     </div>
   );

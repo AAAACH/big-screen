@@ -29,12 +29,12 @@ export const Home = () => {
           <Chart2/>         
         </section>
         <section className="section2">
-          <Statistic/>
-          <Chart4/>
+          <Chart4/>                   
           <div className="ring">
             <div className="radar"/>
           </div>
-          <span>数据实时监控中</span>
+          <span>实时监控中</span>
+          <Statistic/> 
         </section>
         <section className="section3">
           <Chart6/>
@@ -42,7 +42,7 @@ export const Home = () => {
           <Chart7/>
         </section>
       </main>
-      <p className="foot">© XF 2022-2023</p>
+      <p className="foot"></p>
     </div>
   );
 };

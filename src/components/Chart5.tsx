@@ -49,9 +49,10 @@ export const Chart5 = () => {
       ]
     }));
   }, []);
+
   return (
     <div className="chartWrapper">
-      <div className="title">消防工作者统计</div>
+      <div className="title">消防人员统计</div>
       <div ref={divRef} className="chart"/>
     </div>
   );

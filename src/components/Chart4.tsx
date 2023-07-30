@@ -34,6 +34,7 @@ export const Chart4 = () => {
       ]
     }));
   }, []);
+  
   return (
     <>
       <div ref={divRef} className="chart"/>

@@ -12,7 +12,7 @@ export const Chart1 = () => {
   };
   const render = data => {
     myChart.current.setOption(createEchartsOptions({
-      color: ['#3597d4', '#3559a7', '#f6b044', '#ea5c5a', '#3ab059', '#fdfdfd'],
+      color: ['#3559a7'],
       xAxis: {
         data: ['A类火灾', 'B类火灾', 'C类火灾', 'D类火灾', 'E类火灾', 'F类火灾'],
         axisTick: {show: false},
@@ -54,7 +54,7 @@ export const Chart1 = () => {
   
   return (
     <div className="chartWrapper">
-      <div className="title">火灾类型统计</div>
+      <div className="title">火警情况统计</div>
       <div ref={divRef} className="chart"/>
     </div>
   );
